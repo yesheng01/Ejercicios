@@ -8,32 +8,36 @@ package Ejercicios_Bucles;/*
 */
 import java.util.Scanner;
 public class Ejercicio19{
-public static void main(String[] args) {
-    Scanner UserIn = new Scanner(System.in);
-        System.out.print("Por favor, introduzca la altura de la pirámide: ");
-        int alturaIntroducida;
-        alturaIntroducida = UserIn.nextInt();
-        System.out.print("Introduzca el carácter de relleno: ");
-        int planta = 1;
-        int longitudDeLinea = 1;
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+        System.out.print("Por favor, introduzca la altura de la pirÃ¡mide: ");
+        int alturaIntroducida = Integer.parseInt(s.nextLine());
+
+        System.out.print("Introduzca el carÃ¡cter de relleno: ");
+        String relleno = s.nextLine();
+
+        int altura = 1;
+        int i = 0;
         int espacios = alturaIntroducida-1;
 
-        while (planta <= alturaIntroducida) {
+        while (altura <= alturaIntroducida) {
 
-        // inserta espacios
-        for (int i = 1; i <= espacios; i++) {
-        System.out.print(" ");
-        }
+            // inserta espacios
+            for (i = 1; i <= espacios; i++) {
+                System.out.print(" ");
+            }
 
-        // pinta la línea
-        for (int i = 1; i <= longitudDeLinea; i++) {
-        }
+            // pinta la lÃ­nea
+            for (i = 1; i < altura * 2; i++) {
+                System.out.print(relleno);
+            }
 
-        System.out.println();
+            System.out.println();
 
-        planta++;
-        espacios--;
-        longitudDeLinea += 2;
+            altura++;
+            espacios--;
         }
-        }
-        }
+    }
+}

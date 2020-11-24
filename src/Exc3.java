@@ -1,4 +1,4 @@
-package Ejercicios_Bucles;/*
+/*
    Ejercicios_Bucles
    Nombre_project: Ejercicios
     Exc3
@@ -23,6 +23,7 @@ public class Exc3 {
             System.out.println("Opción 2:Gestion de productos");
             System.out.println("Opción 3:Gestion de compra/venta");
             System.out.println("Opción 4:Salir");
+            System.out.print("Selecciona una opción: ");
             opcion =sc1.nextInt();
             switch (opcion){
                 case 1:
@@ -56,6 +57,7 @@ public class Exc3 {
             System.out.println("1.2 Modificar un empleat");
             System.out.println("1.3 Donar de baixa un empleat");
             System.out.println("Opción 4:Salir");
+            System.out.print("Selecciona una opción: ");
             opcion = sc1.nextInt();
             switch (opcion) {
                 case 1:
@@ -95,6 +97,7 @@ public class Exc3 {
             System.out.println("\t2.1 Modificar un producte");
             System.out.println("\t2.1 Donar de baixa un producte");
             System.out.println("Opción 4:Salir");
+            System.out.print("Selecciona una opción: ");
             opcion = sc1.nextInt();
             switch (opcion) {
                 case 1:
@@ -132,6 +135,7 @@ public class Exc3 {
             System.out.println("3.1 Gestió de comandes");
             System.out.println("3.2 Veure estadístiques i gràfics");
             System.out.println("Opción 4:Salir");
+            System.out.print("Selecciona una opción: ");
             opcion =sc1.nextInt();
             switch (opcion){
             case 1:
