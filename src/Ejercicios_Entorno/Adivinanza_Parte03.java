@@ -18,9 +18,10 @@ public class Adivinanza_Parte03 {
         boolean exit = false;
         while (!exit){
             try {
+                System.out.println("Decide lo que quieres hacer con tu maquina: ");
                 System.out.println("Tu balance: " + balance + "€");
                 System.out.println("1 Iniciar Juego \n2 Salir");
-                System.out.print("order: ");
+                System.out.print("Elige la opcion: ");
                 switch (Integer.parseInt(escrito.nextLine())){
                     case 1 ->startGame();
                     case 2 ->exit=true;
@@ -29,7 +30,6 @@ public class Adivinanza_Parte03 {
                 System.out.println(e.getMessage());
             }
         }
-
     }
     private static void startGame(){
         balance--;
