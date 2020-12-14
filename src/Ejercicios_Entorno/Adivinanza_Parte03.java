@@ -5,24 +5,43 @@ import java.util.Scanner;
 /**
  * Ejercicios_Entorno
  * Nombre_project: Ejercicios
- * Adivinanza_Parte02
+ * Adivinanza_Parte03
  * Created by: cide
- * Date : 11/12/20
+ * Date : 14/12/20
  * Description:
  **/
-import java.util.Scanner;
-public class Adivinanza_Parte02 {
-    public static void main(String[] args) {
-        Scanner escrito = new Scanner(System.in);
+public class Adivinanza_Parte03 {
+    private static int balance = 20;
+    private static Scanner escrito = new Scanner(System.in);
+
+    private static void MenuPrincipal(){
+        boolean exit = false;
+        while (!exit){
+            try {
+                System.out.println("Tu balance: " + balance + "€");
+                System.out.println("1 Iniciar Juego \n2 Salir");
+                System.out.print("order: ");
+                switch (Integer.parseInt(escrito.nextLine())){
+                    case 1 ->startGame();
+                    case 2 ->exit=true;
+                }
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+    }
+    private static void startGame(){
+        balance--;
         boolean acertado = false;
         int intentos = 5;
         int i;
         int numeroMisterioso = (int) (Math.random() * 99 + 1);
         int [] numeroIntroducido = new int[5];
-        do {
+        while (intentos > 0 && !acertado){
             System.out.println("Te quedan " + intentos + " intentos");
             System.out.print("Introduce el numero a adivinar: ");
-            i = escrito.nextInt();
+            i = Integer.parseInt(escrito.nextLine());
             numeroIntroducido[intentos- 1]=i;
             intentos--;
             if (i == numeroMisterioso) {
@@ -32,16 +51,20 @@ public class Adivinanza_Parte02 {
             } else {
                 System.out.println("El numero a adivinar es menor.");
             }
-        } while (intentos > 0 && !acertado);
-
+        }
         if (acertado) {
             System.out.println("Enhorabuena! Has acertado!. El numero de intentos ha quedado:"+ intentos);
+            balance += 5;
         } else {
             System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso  + "\n" +"Intentos utilizados son: " + intentos);
         }
         for (i  = 0; i < numeroIntroducido.length; i++) {
-            System.out.println("El numero de intento: ");
+            System.out.println("El numero de intento:");
             System.out.println(numeroIntroducido[i]);
         }
     }
+    public static void main(String[] args) {
+        MenuPrincipal();
+    }
 }
+
