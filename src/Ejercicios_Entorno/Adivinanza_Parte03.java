@@ -19,18 +19,23 @@ public class Adivinanza_Parte03 {
         while (!exit){
             try {
                 System.out.println("Decide lo que quieres hacer con tu maquina: ");
-                System.out.println("Tu balance: " + balance + "€");
-                System.out.println("1 Iniciar Juego \n2 Salir");
+                System.out.println("1 Iniciar Juego \n2 Mira tu balance \n3 Salir");
                 System.out.print("Elige la opcion: ");
                 switch (Integer.parseInt(escrito.nextLine())){
                     case 1 ->startGame();
-                    case 2 ->exit=true;
+                    case 2 ->mirabalance();
+                    case 3 ->exit=true;
                 }
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
         }
     }
+
+    private static void mirabalance(){
+        System.out.println("Tu balance es: " + balance + "€");
+    }
+
     private static void startGame(){
         balance--;
         boolean acertado = false;
