@@ -14,40 +14,42 @@ public class Adivinanza_Parte03 {
     private static int balance = 20;
     private static Scanner escrito = new Scanner(System.in);
 
-    private static void MenuPrincipal(){
+    private static void MenuPrincipal() {
         boolean exit = false;
-        while (!exit){
+        while (!exit) {
             try {
                 System.out.println("Decide lo que quieres hacer con tu maquina: ");
-                System.out.println("1 Iniciar Juego \n2 Mira tu balance \n3 Salir");
+                System.out.println("1 Iniciar Juego(0-99)\n2 Mira tu balance \n3 Salir " );
                 System.out.print("Elige la opcion: ");
-                switch (Integer.parseInt(escrito.nextLine())){
-                    case 1 ->startGame();
-                    case 2 ->mirabalance();
-                    case 3 ->exit=true;
+                switch (Integer.parseInt(escrito.nextLine())) {
+                    case 1 -> startGame();
+                    case 2 -> mirabalance();
+                    case 3 -> exit = true;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
     }
 
-    private static void mirabalance(){
+    private static void mirabalance() {
         System.out.println("Tu balance es: " + balance + "€");
     }
 
-    private static void startGame(){
+
+    private static void startGame() {
+        System.out.println("Has añadido 1€");
         balance--;
         boolean acertado = false;
         int intentos = 5;
         int i;
         int numeroMisterioso = (int) (Math.random() * 99 + 1);
-        int [] numeroIntroducido = new int[5];
-        while (intentos > 0 && !acertado){
+        int[] numeroIntroducido = new int[5];
+        while (intentos > 0 && !acertado) {
             System.out.println("Te quedan " + intentos + " intentos");
             System.out.print("Introduce el numero a adivinar: ");
             i = Integer.parseInt(escrito.nextLine());
-            numeroIntroducido[intentos- 1]=i;
+            numeroIntroducido[intentos - 1] = i;
             intentos--;
             if (i == numeroMisterioso) {
                 acertado = true;
@@ -58,17 +60,17 @@ public class Adivinanza_Parte03 {
             }
         }
         if (acertado) {
-            System.out.println("Enhorabuena! Has acertado!. El numero de intentos ha quedado:"+ intentos);
+            System.out.println("Enhorabuena! Has acertado!. El numero de intentos ha quedado:" + intentos);
             balance += 5;
         } else {
-            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso  + "\n" +"Intentos utilizados son: " + intentos);
+            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso + "\n" + "Intentos utilizados son: " + intentos);
         }
-        for (i  = 0; i < numeroIntroducido.length; i++) {
+        for (i = 0; i < numeroIntroducido.length; i++) {
             System.out.println("El numero de intento:");
             System.out.println(numeroIntroducido[i]);
         }
     }
-    public static void main(String[] args) {
+    public static void main (String[]args){
         MenuPrincipal();
     }
 }

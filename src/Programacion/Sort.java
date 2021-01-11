@@ -13,42 +13,31 @@ import java.util.Arrays;
 
     public class Sort {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            int[]numeros = {2,8,56,3,4,8,96,21,42,56,75,11,
+        int[] numeros = {2, 8, 56, 3, 4, 8, 96, 21, 42, 56, 75, 11,
 
-                    52,43,62,112,14,3,9,58,27,91,64,38};
+                52, 43, 62, 112, 14, 3, 9, 58, 27, 91, 64, 38};
 
 
+        System.out.println("SIN ORDENAR");
 
-            System.out.println("SIN ORDENAR");
+        for (int x = 1; x < numeros.length; x++) {
 
-            //El siguiente bucle for imprimirá los números
+            System.out.println(x + ": " + numeros[x]);
 
-            //tal cual fueron introducidos
+        }
 
-            for(int x = 1; x < numeros.length; x++){
+        System.out.println("ORDENADOS");
 
-                System.out.println(x+ ": " + numeros[x]);
+        Arrays.sort(numeros);
 
-            }
 
-            System.out.println("ORDENADOS");
+        for (int i = 1; i < numeros.length; i++) {
 
-            //Llamada al método sort de la clase Arrays para
-
-            //ordenar el array
-
-            Arrays.sort(numeros);
-
-            //Muestra el array ordenadado ascendentemente
-
-            for(int i = 1; i < numeros.length; i++){
-
-                System.out.println(i+ ": " + numeros[i]);
-
-            }
+            System.out.println(i + ": " + numeros[i]);
 
         }
 
     }
+}
