@@ -10,34 +10,55 @@ import java.util.ArrayList;
  **/
 public class Ejercicio2 {
     public static void main(String[] args) {
+        int total = 0;
+        int media = 0;
+        int minimo = Integer.MAX_VALUE;
+        int maximo = Integer.MIN_VALUE;
 
-        ArrayList<Integer> nombres = new ArrayList<Integer>();
 
-        int suma = 0;
-        int media;
-        int max = 0;
-        int min = 0;
-        boolean firstIteration = true;
+        int tamaño = (int)(Math.random() * 10) + 10;
 
-        for (int i = 0; i <= 20; i++) {
-            nombres.add((int) ((Math.random() * 99 +1)));
+        ArrayList<Integer> numAleatorio = new ArrayList();
+
+        for (int i = 0; i < tamaño; i++) {
+            numAleatorio.add((int)(Math.random() * 100));
+        }
+
+        int aux = 1;
+
+        for (int n : numAleatorio) {
+            System.out.println(aux + ". " + n);
+            aux++;
         }
 
         // SUMA
-        for (Integer nombre : nombres) {
-            if (firstIteration) {
-                min = nombre;
-                firstIteration = false;
-            }
-            suma += nombre;
-            if (nombre > max) max = nombre;
-            if (nombre < min) min = nombre;
+        for (int n : numAleatorio) {
+            total += n;
         }
-        // MEDIA
-        media = suma / nombres.size();
+        System.out.println("La suma total de su contenido es: " + total + ".");
 
-        System.out.println(nombres + "\n\n");
-        System.out.printf("SUMA: %d MAX: %d MIN: %d media : %d", suma,max, min,media);
+        // MEDIA
+        for (int n : numAleatorio) {
+            media += n;
+        }
+        media /= numAleatorio.size();
+        System.out.println("La media de su contenido es: " + media + ".");
+
+        // MINIMO
+        for (int n : numAleatorio) {
+            if (minimo >= n) {
+                minimo = n;
+            }
+        }
+        System.out.println("El valor minimo es " + minimo + ".");
+
+        // MAXIMO
+        for (int n : numAleatorio) {
+            if (maximo <= n) {
+                maximo = n;
+            }
+        }
+        System.out.println("El valor maximo es " + maximo + ".");
 
     }
 }

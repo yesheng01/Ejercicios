@@ -51,7 +51,8 @@ public class Adivinanza_Parte02 {
             System.out.println("Enhorabuena! Has acertado!. El numero de intentos ha quedado:"+ intentos);
         } else {
             //Y si no te dice lo utilizado y el numero misteriosos
-            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso  + "\n" +"Intentos utilizados son: " + intentos);
+            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso  +
+                    "\n" +"Intentos utilizados son: " + intentos);
         }
         //Other method , Aqui te dice el numero de intento y los numeros que has introducido en el juego
         for (i  = 0; i < numeroIntroducido.length; i++) {

@@ -23,6 +23,7 @@ public class Adivinanza_Parte03 {
     //Atributos
     //Empiezas el juego con 20 euros tal como dice el balance
     private static int balance = 20;
+    //clase
     private static Scanner escrito = new Scanner(System.in);
 
     //Empiezas un bucle con try y switch como un menu
@@ -82,7 +83,8 @@ public class Adivinanza_Parte03 {
             balance += 5;
         } else {
             //No aciertas
-            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso + "\n" + "Intentos utilizados son: " + intentos);
+            System.out.println("Lo siento, no has acertado. El número era: " + numeroMisterioso +
+                    "\n" + "Intentos utilizados son: " + intentos);
         }
         //Methods se te muestra los numeros introducidos en ella.
         for (i = 0; i < numeroIntroducido.length; i++) {
