@@ -50,16 +50,18 @@ public class Bingo {
             if (jugador2.contains(letreros)) {
                 jugador2.remove(Integer.valueOf(letreros));
             }
+            System.out.println("el numero sacada es.." + letreros);
             System.out.println("Cartulina 1 numeros que quedan" + jugador1 );
             System.out.println("Cartulina 2 numeros que quedan " + jugador2);
-            System.out.println("------------------------------------------------");
+            System.out.println("-----------------------------------------------------------");
         }
+
             if (jugador1.isEmpty() && jugador2.isEmpty()) {
                 System.out.println("Los jugadores han empatado! \n");
-            } else if (jugador1.isEmpty()) {
-                System.out.println("Ha ganado el primero!!!! \n" );
+            }else if (jugador1.isEmpty()) {
+                System.out.println("Bingo , Ha ganado el primero!!!! \n" );
             } else if (jugador2.isEmpty()) {
-                System.out.println("Ha ganado el segundo!!!! \n");
+                System.out.println("Bingo , Ha ganado el segundo!!!! \n");
             }
     }
 }
