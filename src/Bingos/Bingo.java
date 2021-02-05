@@ -21,7 +21,7 @@ public class Bingo {
         Bingo bingo = new Bingo();
         bingo.juego();
         bingo.jugar();
-
+        bingo.quiengana();
         tEnd=System.currentTimeMillis();
         tTotal=tEnd-tStart;
         System.out.println("Tiempo de ejecución total: "+tTotal + "miliseg");
@@ -43,7 +43,7 @@ public class Bingo {
     public void jugar() {
         Random numero = new Random();
         while (!jugador1.isEmpty() && !jugador2.isEmpty()) {
-            int letreros = (numero.nextInt(99)+1);
+            int letreros = (numero.nextInt(99) + 1);
             if (jugador1.contains(letreros)) {
                 jugador1.remove(Integer.valueOf(letreros));
             }
@@ -51,17 +51,19 @@ public class Bingo {
                 jugador2.remove(Integer.valueOf(letreros));
             }
             System.out.println("el numero sacada es.." + letreros);
-            System.out.println("Cartulina 1 numeros que quedan" + jugador1 );
+            System.out.println("Cartulina 1 numeros que quedan" + jugador1);
             System.out.println("Cartulina 2 numeros que quedan " + jugador2);
             System.out.println("-----------------------------------------------------------");
         }
-
-            if (jugador1.isEmpty() && jugador2.isEmpty()) {
-                System.out.println("Los jugadores han empatado! \n");
-            }else if (jugador1.isEmpty()) {
-                System.out.println("Bingo , Ha ganado el primero!!!! \n" );
-            } else if (jugador2.isEmpty()) {
-                System.out.println("Bingo , Ha ganado el segundo!!!! \n");
-            }
     }
+
+     public void quiengana(){
+         if (jugador1.isEmpty() && jugador2.isEmpty()) {
+             System.out.println("Los jugadores han empatado! \n");
+         }else if (jugador1.isEmpty()) {
+             System.out.println("Bingo , Ha ganado el primero!!!! \n" );
+         } else if (jugador2.isEmpty()) {
+             System.out.println("Bingo , Ha ganado el segundo!!!! \n");
+         }
+     }
 }
